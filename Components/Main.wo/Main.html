@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>Untitled</title>
+  </head>
+  <body>
+    <wo:form multipleSubmit="true">
+      <div style="display: table;">
+        <wo:loop list="$arrayOfStrings" item="$aString" index="$index">
+          <wo:AjaxUpdateContainer id="$indexAsString" style="display: table-row;">
+            <div style="display: table-cell;">
+              <wo:AjaxObserveField updateContainerID="$indexAsString" action="$~refresh"> <wo:textfield value="$aString" /> </wo:AjaxObserveField>
+            </div>
+            <div style="display: table-cell;"><wo:SubComponent aString="$aString" /></div>
+          </wo:AjaxUpdateContainer>
+        </wo:loop>
+      </div>
+    </wo:form>
+  </body>
+</html>
